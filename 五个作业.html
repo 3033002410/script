@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.none{
+				display:none;
+				width:200px;
+				height: 100px;
+				background-color: #5F9EA0;	
+			}
+			input:hover +.none{
+				display:block;
+			}
+			#popup{
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 600px;
+			height: 400px;
+			margin-left: -300px;
+			margin-top: -200px;
+			border: 1px solid #888;
+			background-color: pink;
+			text-align: center;
+			}
+			a{
+				text-decoration: none;
+			}
+			#goods>div>img{
+			    border:1px solid #ccc;
+			}
+			#goods>div ul li{list-style: none;float: left;}
+			#bigimg{
+				width:500px;
+				height: 400px;
+			}
+			#comm{
+			   width: 300px;
+			   height: 300px;
+			   background-color:#535353;
+			   color:white;
+			   margin: 30px auto;
+			   text-align: center;
+			   line-height: 50px;
+			   position: relative;
+			  }
+			  .asad{
+			   width: 300px;c
+			   height: 46px;
+			   border-bottom: 1px solid black;
+			   position: relative;
+			  }
+			  #eye{
+			   width: 15px;
+			   position: absolute;
+			   top:90px;
+			   left: 210px; 
+			  }
+		</style>
+	</head>
+	<body>
+		<!-- 第一个 -->
+		第一个
+		<input type="button" title="登录" value="登录">
+		<div class="none">这是一段默认为隐藏的信息。</div><br/><br/><br/><br/>
+		<!-- 第二个 -->
+		第二个
+		<a href="javascript:openpopup();" onclick="closepopup()">登录</a>
+		<div id="popup">
+			<form action="" method="">
+				<p>用户账号：<input type="text" /></p>
+				<p>用户密码：<input type="password" /></p>
+				<input type="submit"  name="" value="确认提交"/>
+				<input type="reset" value="重填" />
+				<a href="javascript:closepopup();" onclick="closepopup()">×</a>
+			</form>
+		</div><br>
+		
+		<!-- 第三个 -->
+		第三个
+	<input name="textfield"type="text"value="点击消失"onfocus="if (value =='点击消失'){value =''}"onblur="if (value ==''){value='点击消失'}"/><br>
+	<!-- 第四个 -->
+	第四个
+	<div id="goods">
+	    <div>
+	        <img src="jpg/jiangzhuang1.gif" id="bigimg"/>
+	    </div>
+	    <div id="goods_img">
+	        <ul>
+	            
+	            <li><img src="jpg/jiangzhuang1.gif"/></li>
+	            <li><img src="jpg/jiangzhuang2.gif"/></li>
+	            <li><img src="jpg/jiangzhuang3.gif"/></li>
+	            <li><img src="jpg/jiangzhuang4.gif"/></li>
+	        </ul>
+	    </div>
+	</div><br><br><br><br><br><br><br><br><br><br><br>
+	<!-- 第五个 -->
+	第五个
+	<div id="comm">
+	   <h1>密码隐藏</h1>
+	   <!-- <input type='text' value='请输入账号：'> -->
+	   <input type="password" value="meiyourenshiwuzuide" id="asad">
+	   <label for=""><img src="jpg/eyenone.png" id='eye'>
+	   </label>
+	  </div>
+	<script type="text/javascript">
+		function openpopup(){
+			document.getElementById('popup').style.display='block';
+		};
+		function closepopup(){
+			document.getElementById('popup').style.display='none';
+		};
+	window.onload=function(){
+	    let div=document.getElementById("goods_img");
+	    let arr_img=div.getElementsByTagName("img");
+	    for(let i=0;i<arr_img.length;i++){
+	        arr_img[i].onmouseover=function(){
+	            let bigimg=document.getElementById("bigimg");
+	            let p=this.src;
+	            bigimg.src=p.replace(".jpg","_big.jpg");
+	        }
+	    }
+	}
+	let asad = document.getElementById('asad');
+	  let img = document.getElementById('eye');
+	  let ye = 0;
+	  img.onclick=function(){
+	    if (ye==0){
+	     asad.type='text';
+	     eye.src="jpg/eyesee.png";
+	     ye=1;
+	     
+	    }else{
+	     asad.type='password';
+	     eye.src="jpg/eyenone.png";
+	     ye=0;
+	    }
+	   }
+			</script>
+	</body>
+</html>

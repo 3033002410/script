@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.box{
+			width:170px;
+			height:293px;
+			background: url(./jpg/walk.jpg) left no-repeat;
+			animation: walk 1s steps(6) infinite;
+		}
+		@keyframes walk{
+			from{
+				background-position: 0 0;
+			}
+			to{
+				background-position: -1080px 0;
+			}
+		}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>
