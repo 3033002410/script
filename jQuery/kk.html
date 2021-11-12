@@ -7,6 +7,7 @@
 		<style>
 			a{
 				text-decoration: none;
+				cursor:pointer;
 			}
 		</style>
 	</head>
@@ -50,20 +51,20 @@
 		 </ol><button class="add">添加</button>
 		<button class="clear">清空列表</button>
 		<script>
-		let x = '<a href="">&times</a>';
 		$(function(){
 			$('.add').click(function(){
 				let w=$('.wenben').val();
 				if($('.wenben').val()==""){
 					alert('还没有填写内容');
 				}else{
-					let l = `<li><p>${x}${w}</p></li>`;
+					let l = `<li><a>&times</a>${w}</li>`;
 					$('ol').prepend(l);
+					$('ol li >a').click(function(){
+				$(this).parent().remove();
+			})
 				}
 			});
-			$('x').click(function(){
-				$('li').remove();
-			})
+			
 			$(document).ready(function(){
 				$('.clear').click(function(){
 				$('.list').empty();
