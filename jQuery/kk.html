@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="./jquery.min.js"></script>
+		<style>
+			a{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<pre>
+			1-100
+			for($i=1;$i<=100;$i++){
+				echo $i.' ';
+			}
+			
+			1-100之间的偶数
+			for($x=1;$x<=100;$x++){
+				if($x%2==0){
+					echo $x.' ';
+				}
+			}
+			
+			3的倍数用foo替换 5的倍数用bar替换 3和5的倍数用foobar替换
+			for($y=1;$y<=100;$y++){
+				if($y%5==0 && $y%3==0){
+					echo 'foobar'.' ';
+				}else if($y%3==0){
+					echo 'foo'.' ';
+				}else if($y%5==0){
+					echo 'bar'.' ';
+				}else {
+					echo $y.' ';
+				}
+			}
+			
+		</pre>
+		<hr>
+		<h1>sql测试答案</h1>
+		c b c b d
+		b c d a 错误
+		c a c d b 
+		c a b a d
+		<hr>
+		<input type="text" class="wenben">
+		 <ol class="list">
+		 </ol><button class="add">添加</button>
+		<button class="clear">清空列表</button>
+		<script>
+		let x = '<a href="">&times</a>';
+		$(function(){
+			$('.add').click(function(){
+				let w=$('.wenben').val();
+				if($('.wenben').val()==""){
+					alert('还没有填写内容');
+				}else{
+					let l = `<li><p>${x}${w}</p></li>`;
+					$('ol').prepend(l);
+				}
+			});
+			$('x').click(function(){
+				$('li').remove();
+			})
+			$(document).ready(function(){
+				$('.clear').click(function(){
+				$('.list').empty();
+			});
+			})
+		})
+		</script>
+	</body>
+</html>
